@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import GameBoard, { PlacementNorm, TARGET_DEFAULT } from "@/components/game/GameBoard";
 import Scoreboard, { RankedRow } from "@/components/game/Scoreboard";
 import portraitHero from "@/assets/portrait-hero.jpg";
+import { Link } from "react-router-dom";
 
 // Common emojis for quick selection
 const commonEmojis = [
@@ -141,6 +142,9 @@ const Index = () => {
             Place your emoji as close as possible to the secret spot. Fewer tokens and
             shorter distance rank higher.
           </p>
+          <div className="mt-4 flex justify-center">
+            <Button asChild variant="secondary" className="hover-scale"><Link to="/challenge">Try Challenge Mode</Link></Button>
+          </div>
         </header>
 
         {/* Start Screen */}
