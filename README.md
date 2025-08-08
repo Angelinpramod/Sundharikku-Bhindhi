@@ -1,126 +1,208 @@
-Sundharikku Bhindhi
-Sundharikku Bhindhi is a fun, multiplayer web-based game where players take turns placing emojis on a celebrity's face, aiming to position them as close as possible to a target point (between the eyebrows). The game calculates scores based on the distance from the target and the token count of the chosen emoji (using TikToken for LLM tokenization). The player with the smallest distance and lowest token count wins. The game includes a countdown, spinning image effects, a scoreboard, and a webcam feature to take snapshots with a virtual bindi.
-Features
+🌟 Sundharikku Bhindhi 👑
+A hilarious emoji-placement game where precision meets pixels!
 
-Multiplayer: Supports 1–10 players, with automatic turn-switching.
-Emoji Placement: Players select emojis from a slider or picker and place them via click or drag-and-drop.
-Scoring: Backend computes distances and token counts, ranking players by distance (ascending) and then token count (ascending).
-Smooth Transitions: Includes fade-in/out animations and a spinning image effect.
-Scoreboard: Displays player rankings with three columns: Player Name, Emoji (with token count), and Distance (in pixels).
-Webcam Snapshot: Players can take a selfie with a virtual red bindi and download it.
-Confetti Celebration: Visual feedback when the scoreboard appears.
+Sundharikku Bhindhi is a quirky, multiplayer browser game where players compete to place an emoji exactly between the eyebrows of a celebrity image (yes, it’s chaotic fun). Each emoji has a hidden twist—it comes with a token cost based on LLM tokenization (because why not add a bit of nerdy spice?).
 
-Tech Stack
+🎯 Closest emoji wins—but watch your token count!
+📸 Bonus: Take a webcam selfie with a virtual bindi to seal your victory in style.
 
-Frontend: HTML, CSS, JavaScript (ES Modules), Emoji Button, Canvas Confetti
-Backend: Node.js, Express.js, CORS, TikToken
-Dependencies:
-@dqbd/tiktoken for token counting
-express and cors for the server
-nodemon (dev dependency) for development
-External CDNs: Emoji Button, Canvas Confetti
+🚀 Features
+🔁 Multiplayer Madness: 1–10 players, with automatic turn rotation.
 
+😜 Emoji Drop: Click or drag your emoji to place it on the celebrity’s face.
 
+📏 Smart Scoring: Based on:
 
-Prerequisites
+Distance to the target point
 
-Node.js (v14 or higher)
-npm (v6 or higher)
-A modern web browser (Chrome, Firefox, etc.)
-A webcam (optional, for the snapshot feature)
-An image file named anushka.png (place in the public folder)
+Emoji’s token count (using TikToken)
 
-Installation
+🎞️ Slick Transitions: Includes fade-ins, spinning images, and animated sequences.
 
-Clone the Repository:
+🏆 Scoreboard: Ranks players with:
+
+Name
+
+Emoji (with token count)
+
+Distance from the center
+
+📷 Webcam Fun: Take a selfie with a red bindi and download it.
+
+🎉 Confetti Blast: Celebrate results in colorful style!
+
+🛠️ Tech Stack
+Frontend
+
+HTML, CSS, JavaScript (ES Modules)
+
+Emoji Button (for emoji picker)
+
+Canvas Confetti (for celebrations)
+
+Backend
+
+Node.js + Express.js
+
+CORS
+
+TikToken (@dqbd/tiktoken) for calculating emoji token values
+
+Dev Tools
+
+nodemon (for hot reload in development)
+
+CDNs Used
+
+Emoji Button
+
+Canvas Confetti
+
+📦 Prerequisites
+Node.js (v14+)
+
+npm (v6+)
+
+Modern browser (Chrome, Firefox, etc.)
+
+Webcam (optional, but highly recommended!)
+
+Place anushka.png (500x500 recommended) inside the /public folder
+
+🧩 Installation
+Clone the repo
+
+bash
+Copy
+Edit
 git clone https://github.com/your-username/sundharikku-bhindhi.git
 cd sundharikku-bhindhi
+Install dependencies
 
-
-Install Dependencies:
+bash
+Copy
+Edit
 npm install
+Add the celebrity image
+Place a file named anushka.png in the /public folder.
 
-
-Prepare the Image:
-
-Place an image file named anushka.png in the public folder. This is the celebrity image used in the game. Ensure it’s approximately 500x500 pixels for best results.
-
-
-Start the Server:
+Start the server
 
 For production:
+
+bash
+Copy
+Edit
 npm start
+For development (auto-restart enabled):
 
-
-For development (with auto-restart):
+bash
+Copy
+Edit
 npm run dev
+Play the game
+Open your browser and head to http://localhost:3000
 
+🕹️ Game Flow
+Start Screen
 
+Enter number of players (1–10)
 
+Click "Start"
 
-Access the Game:
+Countdown
 
-Open your browser and navigate to http://localhost:3000.
+Dramatic 3…2…1…GO!
 
+Game Round
+Each player:
 
+Chooses an emoji
 
-Game Flow
+Clicks or drags it onto the spinning celebrity image
 
-Start Screen: Enter the number of players (1–10) and click "Start."
-Countdown: A 3-2-1-GO! animation plays.
-Game Screen: The celebrity image spins and fades out after 5 seconds. Each player:
-Selects an emoji from the slider or emoji picker.
-Places it by clicking or dragging onto the image area.
-The game automatically prompts the next player after each placement.
+The image disappears after 5 seconds
 
+Next player’s turn begins automatically
 
-Image Reveal: After all players place their emojis, the image reappears with all emojis visible.
-Scoreboard: After 5 seconds, the scoreboard appears, showing:
+Reveal Time
+
+All emojis appear in place
+
+After a moment, the scoreboard pops up!
+
+Scoreboard Shows
+
 Player name
-Chosen emoji and its token count
-Distance from the target point (in pixels)
-The player with the lowest distance (and lowest token count in case of a tie) is ranked #1.
 
+Emoji + token count
 
-Webcam: Click "പൊട്ടുതൊടൂ" (Place the Bindi) to open the webcam, view a live feed with a red bindi overlay, take a snapshot, and download it.
+Distance from the target point (center of the forehead, about 28% from top)
 
-File Structure
+Webcam Bonus
+
+Click "പൊട്ടുതൊടൂ" to launch webcam view
+
+Take a selfie with the bindi overlay
+
+Download and flex your glory!
+
+📁 File Structure
+csharp
+Copy
+Edit
 sundharikku-bhindhi/
 ├── public/
-│   └── anushka.png         # Celebrity image
-├── index.html             # Main HTML file
-├── style.css              # Styles for layout and animations
-├── script.js              # Frontend logic (game flow, UI interactions)
-├── server.js              # Backend server (Express.js)
-├── package.json           # Project metadata and dependencies
-└── README.md              # This file
+│   └── anushka.png       # Celebrity image
+├── index.html            # Main game UI
+├── style.css             # Styling and animation
+├── script.js             # Frontend logic
+├── server.js             # Express backend
+├── package.json          # Project config
+└── README.md             # This file
+🧠 Scoring Logic
+🎯 Distance: Euclidean distance (pixels) between placed emoji and target point.
 
-How Scoring Works
+🔤 Token Count: Calculated with GPT-2 tokenizer from @dqbd/tiktoken.
 
-Distance: Calculated as the Euclidean distance (in pixels) between the placed emoji and the target point (center of the image, 28% from the top).
-Token Count: Computed using the @dqbd/tiktoken library (GPT-2 model) based on the emoji's UTF-8 encoding.
-Ranking: Players are sorted by distance (ascending) first, then by token count (ascending). The lowest values win.
+🏅 Ranking: Sorted first by distance (lower is better), then by token count.
 
-Notes
+⚠️ Notes
+✅ Ensure anushka.png is in /public, or update index.html to use another image.
 
-Ensure anushka.png is in the public folder, or update the src attribute in index.html to point to your image.
-The webcam feature requires user permission and a compatible device.
-The game uses external CDNs for Emoji Button and Canvas Confetti, so an internet connection is required.
-The server runs on port 3000 by default. Update server.js if you need a different port.
+📸 Webcam feature requires browser permission and a supported device.
 
-Troubleshooting
+🌐 Internet is needed to load emoji picker and confetti from CDNs.
 
-Server Errors: Check the console for logs. Ensure all dependencies are installed (npm install).
-Image Not Loading: Verify anushka.png is in the public folder and accessible.
-Webcam Issues: Ensure browser permissions allow webcam access. Use a modern browser for best compatibility.
-CORS Errors: The server includes CORS middleware, but ensure you’re accessing via http://localhost:3000.
+🔁 Default server port: 3000 (update in server.js if needed).
 
-Contributing
-Feel free to submit issues or pull requests for bug fixes, enhancements, or new features. Ensure any changes maintain compatibility with the existing tech stack and include appropriate tests.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Acknowledgments
+🛠️ Troubleshooting
+Server not starting?
+→ Check terminal logs, try reinstalling with npm install.
 
-Built with lovable❤️ for a fun, interactive gaming experience.
-Uses Emoji Button and Canvas Confetti for UI enhancements.
-Powered by Express.js and TikToken for backend logic.
+Image not loading?
+→ Make sure anushka.png is inside /public and properly named.
+
+Webcam not working?
+→ Use a supported browser and grant webcam access.
+
+CORS errors?
+→ Ensure you're accessing via http://localhost:3000.
+
+🤝 Contributing
+Bug fixes? New features? Cool ideas?
+We welcome pull requests! Just make sure it plays nicely with the current stack and includes clear documentation.
+
+📜 License
+MIT License – See the LICENSE file for details.
+
+🙌 Acknowledgments
+Built with ❤️ for playful digital mischief
+
+Emoji Picker by Emoji Button
+
+Celebrations powered by Canvas Confetti
+
+Token logic powered by TikToken
+
+Inspired by every “put a bindi on this” meme out there 🌶️
